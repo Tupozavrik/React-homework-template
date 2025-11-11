@@ -1,0 +1,58 @@
+.App {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2rem;
+    gap: .4em;
+}
+
+.category-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+}
+
+.category:hover .category-header::after {
+    background: blueviolet;
+}
+
+.category-header::after {
+    position: absolute;
+    display: block;
+    content: "";
+    background: black;
+    width: 80%;
+    left: 10%;
+    bottom: 0;
+    height: 1px;
+    transition: all .2s ease-in-out;
+}
+
+.task-card {
+    color: transparent;
+    background: black;
+    background-clip: text;
+}
+
+@keyframes task-card-hover {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: blueviolet;
+    }
+}
+
+.task-card:hover {
+    animation: task-card-hover .2s ease-in-out forwards;
+}
