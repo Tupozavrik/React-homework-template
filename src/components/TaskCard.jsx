@@ -4,7 +4,6 @@ export function TaskCard({ task, categoryName, tasks, setTasks }) {
   const [isEditing, setIsEditing] = useState(false)
   const [editedName, setEditedName] = useState(task.name)
 
-  // 1️⃣ Изменение названия задачи
   const handleSaveName = () => {
     if (editedName.trim()) {
       const newTasks = { ...tasks }
@@ -20,7 +19,6 @@ export function TaskCard({ task, categoryName, tasks, setTasks }) {
     setIsEditing(false)
   }
 
-  // 2️⃣ Перемещение в другую категорию
   const handleMoveTask = (newCategoryName) => {
     if (newCategoryName !== categoryName) {
       const newTasks = { ...tasks }
@@ -30,7 +28,6 @@ export function TaskCard({ task, categoryName, tasks, setTasks }) {
     }
   }
 
-  // 3️⃣ Удаление задачи
   const handleDelete = () => {
     const newTasks = { ...tasks }
     newTasks[categoryName] = newTasks[categoryName].filter(t => t.id !== task.id)
